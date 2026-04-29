@@ -23,8 +23,407 @@ const SOAL_DATABASE = {
   matematika: {
     sd: {
       kabupaten: [
-        { id: 'mtksdk1', bidang: 'Aljabar', pertanyaan: "Jika $3n + 7 = 22$, nilai dari $n - 2$ adalah...", jawabanBenar: "3", opsiLain: ["5", "15", "7"], pembahasan: "$3n = 22 - 7 \\implies 3n = 15 \\implies n = 5$. Maka $n - 2 = 5 - 2 = 3$." },
-      ],
+  {
+    id: 'sdk3',
+    bidang: 'Aljabar',
+    pertanyaan: "Jika $3n + 7 = 22$, nilai dari $n - 2$ adalah...",
+    jawabanBenar: "3",
+    opsiLain: ["5", "15", "7"],
+    pembahasan: "$3n = 22 - 7 \\implies 3n = 15 \\implies n = 5$. Maka $n - 2 = 5 - 2 = 3$."
+  },
+  {
+    id: 'sdk4',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Banyaknya bilangan bulat positif kurang dari 100 yang habis dibagi 3 tetapi tidak habis dibagi 5 adalah...",
+    jawabanBenar: "27",
+    opsiLain: ["33", "20", "26"],
+    pembahasan: "Bilangan kelipatan 3 kurang dari 100 adalah $99 / 3 = 33$. Bilangan yang habis dibagi 3 dan 5 (kelipatan 15) adalah $15, 30, 45, 60, 75, 90$ (ada 6 buah). Jadi, $33 - 6 = 27$."
+  },
+  {
+    id: 'sdk5',
+    bidang: 'Geometri',
+    pertanyaan: "Sebuah persegi memiliki luas $144 \\text{ cm}^2$. Jika panjang sisinya diperpanjang sebesar 25%, maka luas persegi yang baru adalah... $\\text{cm}^2$",
+    jawabanBenar: "225",
+    opsiLain: ["180", "200", "250"],
+    pembahasan: "Sisi awal $= \\sqrt{144} = 12$. Sisi baru $= 12 + (25\\% \\times 12) = 12 + 3 = 15$. Luas baru $= 15 \\times 15 = 225 \\text{ cm}^2$."
+  },
+  {
+    id: 'sdk6',
+    bidang: 'Statistik',
+    pertanyaan: "Rata-rata nilai matematika 5 siswa adalah 80. Jika digabungkan dengan nilai Andi, rata-ratanya menjadi 82. Nilai Andi adalah...",
+    jawabanBenar: "92",
+    opsiLain: ["85", "90", "88"],
+    pembahasan: "Total nilai 5 siswa $= 5 \\times 80 = 400$. Total nilai 6 siswa $= 6 \\times 82 = 492$. Nilai Andi $= 492 - 400 = 92$."
+  },
+  {
+    id: 'sdk7',
+    bidang: 'Kombinatorika',
+    pertanyaan: "Dalam sebuah ruangan terdapat 6 orang yang saling berjabat tangan satu sama lain tepat satu kali. Banyaknya jabat tangan yang terjadi adalah...",
+    jawabanBenar: "15",
+    opsiLain: ["30", "12", "36"],
+    pembahasan: "Gunakan rumus jabat tangan: $n(n-1)/2$. Maka $6(5)/2 = 30/2 = 15$."
+  },
+  {
+    id: 'sdk8',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Hasil kali tiga bilangan prima pertama yang lebih besar dari 10 adalah...",
+    jawabanBenar: "2431",
+    opsiLain: ["4199", "3003", "4500"],
+    pembahasan: "Tiga bilangan prima setelah 10 adalah 11, 13, dan 17. Hasil kalinya: $11 \\times 13 \\times 17 = 2431$."
+  },
+  {
+    id: 'sdk9',
+    bidang: 'Aljabar',
+    pertanyaan: "Diberikan operasi $a \\ast b = (a + b) \\times (a - b)$. Nilai dari $10 \\ast 8$ adalah...",
+    jawabanBenar: "36",
+    opsiLain: ["18", "2", "64"],
+    pembahasan: "$10 \\ast 8 = (10 + 8) \\times (10 - 8) = 18 \\times 2 = 36$."
+  },
+  {
+    id: 'sdk10',
+    bidang: 'Geometri',
+    pertanyaan: "Sudut terkecil yang dibentuk oleh kedua jarum jam pada pukul 04.00 adalah...",
+    jawabanBenar: "120",
+    opsiLain: ["90", "100", "150"],
+    pembahasan: "Setiap lompatan angka jam bernilai $30^\\circ$. Dari angka 12 ke 4 ada 4 lompatan, maka $4 \\times 30^\\circ = 120^\\circ$."
+  },
+  {
+    id: 'sdk11',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Sisa pembagian $2^{2026}$ oleh 10 adalah...",
+    jawabanBenar: "4",
+    opsiLain: ["2", "6", "8"],
+    pembahasan: "Pola angka satuan $2^n$: $2^1=2, 2^2=4, 2^3=8, 2^4=6, 2^5=2$. Pola berulang setiap 4 kali. $2026 \\div 4$ sisa 2. Maka angka satuannya sama dengan $2^2 = 4$."
+  },
+  {
+    id: 'sdk12',
+    bidang: 'Kombinatorika',
+    pertanyaan: "Banyaknya susunan huruf berbeda yang dapat dibentuk dari kata 'MAMA' adalah...",
+    jawabanBenar: "6",
+    opsiLain: ["12", "24", "4"],
+    pembahasan: "Menggunakan permutasi dengan unsur sama: $4! / (2! \\times 2!) = 24 / 4 = 6$."
+  },
+  {
+    id: 'sdk13',
+    bidang: 'Aljabar',
+    pertanyaan: "Jika $x + y = 10$ dan $x - y = 4$, maka nilai dari $x^2 - y^2$ adalah...",
+    jawabanBenar: "40",
+    opsiLain: ["14", "100", "16"],
+    pembahasan: "Ingat selisih dua kuadrat: $x^2 - y^2 = (x+y)(x-y)$. Maka $10 \\times 4 = 40$."
+  },
+  {
+    id: 'sdk14',
+    bidang: 'Geometri',
+    pertanyaan: "Sebuah segitiga memiliki alas 12 cm dan luas 48 cm². Tinggi segitiga tersebut adalah... cm",
+    jawabanBenar: "8",
+    opsiLain: ["4", "6", "12"],
+    pembahasan: "$L = (a \\times t) / 2 \\implies 48 = (12 \\times t) / 2 \\implies 48 = 6t \\implies t = 8$."
+  },
+  {
+    id: 'sdk15',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Bilangan terkecil yang jika dibagi 4 sisa 3, dibagi 5 sisa 4, dan dibagi 6 sisa 5 adalah...",
+    jawabanBenar: "59",
+    opsiLain: ["60", "61", "119"],
+    pembahasan: "Selisih antara pembagi dan sisa selalu 1 ($4-3=1, 5-4=1, 6-5=1$). Cari KPK(4,5,6) lalu kurangi 1. KPK(4,5,6) $= 60$. Bilangan $= 60 - 1 = 59$."
+  },
+  {
+    id: 'sdk16',
+    bidang: 'Aljabar',
+    pertanyaan: "Berapakah hasil dari $1 - 2 + 3 - 4 + 5 - 6 + \\dots + 99 - 100$?",
+    jawabanBenar: "-50",
+    opsiLain: ["50", "0", "-100"],
+    pembahasan: "Kelompokkan berpasangan: $(1-2) + (3-4) + \\dots + (99-100)$. Ada 50 pasangan yang masing-masing bernilai $-1$. Jadi, $50 \\times (-1) = -50$."
+  },
+  {
+    id: 'sdk17',
+    bidang: 'Statistik',
+    pertanyaan: "Nilai rata-rata dari 4 bilangan adalah 7. Jika selisih bilangan terbesar dan terkecil adalah 4, dan dua bilangan lainnya adalah 7, bilangan terbesarnya adalah...",
+    jawabanBenar: "9",
+    opsiLain: ["8", "10", "11"],
+    pembahasan: "Jumlah total $= 4 \\times 7 = 28$. Misal bilangan itu $x, 7, 7, y$. Maka $x + 14 + y = 28 \\implies x + y = 14$. Diketahui $y - x = 4$. Dengan eliminasi, $2y = 18 \\implies y = 9$."
+  },
+  {
+    id: 'sdk18',
+    bidang: 'Geometri',
+    pertanyaan: "Sebuah kubus memiliki panjang diagonal sisi $\\sqrt{50}$ cm. Volume kubus tersebut adalah... $\\text{cm}^3$",
+    jawabanBenar: "125",
+    opsiLain: ["25", "150", "625"],
+    pembahasan: "Diagonal sisi $= s\\sqrt{2} = \\sqrt{50} = 5\\sqrt{2}$. Maka $s = 5$. Volume $= 5^3 = 125$."
+  },
+  {
+    id: 'sdk19',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Berapakah faktor persekutuan terbesar (FPB) dari 72 dan 108?",
+    jawabanBenar: "36",
+    opsiLain: ["18", "24", "12"],
+    pembahasan: "$72 = 2^3 \\times 3^2$ dan $108 = 2^2 \\times 3^3$. FPB $= 2^2 \\times 3^2 = 4 \\times 9 = 36$."
+  },
+  {
+    id: 'sdk20',
+    bidang: 'Aljabar',
+    pertanyaan: "Jika $f(x) = 2x - 3$, maka nilai dari $f(f(5))$ adalah...",
+    jawabanBenar: "11",
+    opsiLain: ["7", "10", "13"],
+    pembahasan: "$f(5) = 2(5) - 3 = 7$. Maka $f(f(5)) = f(7) = 2(7) - 3 = 11$."
+  },
+  {
+    id: 'sdk21',
+    bidang: 'Kombinatorika',
+    pertanyaan: "Dua buah dadu dilempar bersamaan. Peluang muncul mata dadu berjumlah 10 adalah...",
+    jawabanBenar: "3/36",
+    opsiLain: ["1/36", "4/36", "2/36"],
+    pembahasan: "Pasangan mata dadu berjumlah 10: $(4,6), (5,5), (6,4)$. Total ada 3 kemungkinan dari $6 \\times 6 = 36$ total ruang sampel."
+  },
+  {
+    id: 'sdk22',
+    bidang: 'Geometri',
+    pertanyaan: "Keliling sebuah lingkaran adalah 44 cm (gunakan $\\pi = 22/7$). Luas lingkaran tersebut adalah... $\\text{cm}^2$",
+    jawabanBenar: "154",
+    opsiLain: ["144", "164", "616"],
+    pembahasan: "$K = 2 \\times 22/7 \\times r = 44 \\implies 44/7 \\times r = 44 \\implies r = 7$. Luas $= 22/7 \\times 7 \\times 7 = 154$."
+  },
+  {
+    id: 'sdk23',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Berapa banyak angka 0 berurutan di akhir dari hasil perkalian $1 \\times 2 \\times 3 \\times \\dots \\times 25$?",
+    jawabanBenar: "6",
+    opsiLain: ["4", "5", "10"],
+    pembahasan: "Banyak nol ditentukan oleh faktor 5. Dalam 1-25 terdapat kelipatan 5 (5, 10, 15, 20) dan satu kelipatan 25 ($5 \\times 5$). Total faktor 5 adalah $4 + 2 = 6$."
+  },
+  {
+    id: 'sdk24',
+    bidang: 'Aljabar',
+    pertanyaan: "Tentukan nilai dari $\\sqrt{20 + \\sqrt{20 + \\sqrt{20 + \\dots}}}$ adalah...",
+    jawabanBenar: "5",
+    opsiLain: ["4", "6", "20"],
+    pembahasan: "Misal $x = \\sqrt{20+x}$. Maka $x^2 = 20 + x \\implies x^2 - x - 20 = 0$. Faktornya $(x-5)(x+4)=0$. Karena nilai akar harus positif, maka $x = 5$."
+  },
+  {
+    id: 'sdk25',
+    bidang: 'Geometri',
+    pertanyaan: "Banyaknya diagonal ruang pada sebuah prisma segi enam adalah...",
+    jawabanBenar: "18",
+    opsiLain: ["6", "12", "9"],
+    pembahasan: "Rumus diagonal ruang prisma segi-n: $n(n-3)$. Untuk segi enam, $6(6-3) = 6 \\times 3 = 18$."
+  },
+  {
+    id: 'sdk26',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Bilangan $1A2B$ habis dibagi 9 dan 5. Jika $A$ dan $B$ berbeda, nilai $A + B$ terkecil adalah...",
+    jawabanBenar: "6",
+    opsiLain: ["5", "15", "9"],
+    pembahasan: "Habis dibagi 5 maka $B$ bisa 0 atau 5. Jika $B=0$, agar habis dibagi 9 maka $1+A+2+0$ harus kelipatan 9 ($A=6, A+B=6$). Jika $B=5$, maka $1+A+2+5=8+A$ maka $A=1 (A+B=6$ juga)."
+  },
+  {
+    id: 'sdk27',
+    bidang: 'Aljabar',
+    pertanyaan: "Harga 3 buku dan 2 pensil adalah Rp15.000. Harga 2 buku dan 1 pensil adalah Rp9.000. Harga 1 buku adalah...",
+    jawabanBenar: "3000",
+    opsiLain: ["2000", "4000", "2500"],
+    pembahasan: "Eliminasi: $3B+2P=15000$ dan $4B+2P=18000$ (dikali 2). Selisihnya $1B = 3000$."
+  },
+  {
+    id: 'sdk28',
+    bidang: 'Logika',
+    pertanyaan: "Jika hari ini Selasa, maka 100 hari yang lalu adalah hari...",
+    jawabanBenar: "Minggu",
+    opsiLain: ["Senin", "Sabtu", "Jumat"],
+    pembahasan: "$100 \\pmod 7 = 2$ (sisa 2). Dua hari sebelum Selasa adalah Minggu."
+  },
+  {
+    id: 'sdk29',
+    bidang: 'Geometri',
+    pertanyaan: "Sebuah balok memiliki perbandingan $p:l:t = 3:2:1$. Jika volumenya 48 cm³, maka tinggi balok adalah... cm",
+    jawabanBenar: "2",
+    opsiLain: ["1", "3", "4"],
+    pembahasan: "$(3x)(2x)(x) = 48 \\implies 6x^3 = 48 \\implies x^3 = 8 \\implies x = 2$. Tinggi $= x = 2$."
+  },
+  {
+    id: 'sdk30',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Banyaknya faktor positif dari bilangan 120 adalah...",
+    jawabanBenar: "16",
+    opsiLain: ["8", "12", "15"],
+    pembahasan: "$120 = 2^3 \\times 3^1 \\times 5^1$. Banyak faktor $= (3+1)(1+1)(1+1) = 4 \\times 2 \\times 2 = 16$."
+  },
+  {
+    id: 'sdk31',
+    bidang: 'Kombinatorika',
+    pertanyaan: "Budi memiliki 3 baju dan 4 celana berbeda. Banyaknya cara Budi berpakaian adalah...",
+    jawabanBenar: "12",
+    opsiLain: ["7", "1", "24"],
+    pembahasan: "Aturan perkalian sederhana: $3 \\times 4 = 12$ cara."
+  },
+  {
+    id: 'sdk32',
+    bidang: 'Aljabar',
+    pertanyaan: "Jika $x/y = 2/3$, maka nilai dari $(3x + 2y) / (3x - y)$ adalah...",
+    jawabanBenar: "4",
+    opsiLain: ["2", "3", "5"],
+    pembahasan: "Misal $x=2, y=3$. Maka $(3(2) + 2(3)) / (3(2) - 3) = (6+6) / (6-3) = 12 / 3 = 4$."
+  },
+  {
+    id: 'sdk33',
+    bidang: 'Geometri',
+    pertanyaan: "Luas permukaan kubus yang volumenya 64 cm³ adalah... $\\text{cm}^2$",
+    jawabanBenar: "96",
+    opsiLain: ["64", "16", "128"],
+    pembahasan: "$s^3 = 64 \\implies s = 4$. Luas permukaan $= 6 \\times s^2 = 6 \\times 16 = 96$."
+  },
+  {
+    id: 'sdk34',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Bilangan prima terkecil yang lebih besar dari 100 adalah...",
+    jawabanBenar: "101",
+    opsiLain: ["103", "107", "109"],
+    pembahasan: "101 tidak habis dibagi 2, 3, 5, atau 7, sehingga ia adalah bilangan prima berikutnya setelah 100."
+  },
+  {
+    id: 'sdk35',
+    bidang: 'Statistik',
+    pertanyaan: "Median dari data: 8, 3, 9, 4, 7, 5, 8, 6, 2 adalah...",
+    jawabanBenar: "6",
+    opsiLain: ["5", "7", "8"],
+    pembahasan: "Data urut: 2, 3, 4, 5, 6, 7, 8, 8, 9. Data tengah (ke-5) adalah 6."
+  },
+  {
+    id: 'sdk36',
+    bidang: 'Aljabar',
+    pertanyaan: "Hasil dari $1/2 + 1/4 + 1/8 + 1/16 + 1/32$ adalah...",
+    jawabanBenar: "31/32",
+    opsiLain: ["1", "15/16", "63/64"],
+    pembahasan: "Samakan penyebut menjadi 32: $(16+8+4+2+1)/32 = 31/32$."
+  },
+  {
+    id: 'sdk37',
+    bidang: 'Geometri',
+    pertanyaan: "Besar masing-masing sudut pada segitiga sama sisi adalah...",
+    jawabanBenar: "60",
+    opsiLain: ["90", "45", "30"],
+    pembahasan: "Total sudut segitiga $= 180^\\circ$. Karena sama besar, $180 / 3 = 60^\\circ$."
+  },
+  {
+    id: 'sdk38',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Angka terakhir dari $7^{10}$ adalah...",
+    jawabanBenar: "9",
+    opsiLain: ["7", "1", "3"],
+    pembahasan: "Pola satuan 7: $7^1=7, 7^2=9, 7^3=3, 7^4=1$. Pola berulang tiap 4. $10 \\pmod 4 = 2$, maka satuannya adalah 9."
+  },
+  {
+    id: 'sdk39',
+    bidang: 'Logika',
+    pertanyaan: "Andi lebih tua dari Budi. Cici lebih muda dari Budi. Siapa yang paling muda?",
+    jawabanBenar: "Cici",
+    opsiLain: ["Andi", "Budi", "Tidak diketahui"],
+    pembahasan: "Urutan: Andi > Budi > Cici. Maka yang termuda adalah Cici."
+  },
+  {
+    id: 'sdk40',
+    bidang: 'Geometri',
+    pertanyaan: "Berapa banyak titik sudut pada limas segi empat?",
+    jawabanBenar: "5",
+    opsiLain: ["4", "8", "6"],
+    pembahasan: "4 titik di alas dan 1 titik puncak. Total 5."
+  },
+  {
+    id: 'sdk41',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Jumlah dari 10 bilangan asli pertama ($1+2+\\dots+10$) adalah...",
+    jawabanBenar: "55",
+    opsiLain: ["45", "50", "65"],
+    pembahasan: "Gunakan rumus $n(n+1)/2 = 10(11)/2 = 55$."
+  },
+  {
+    id: 'sdk42',
+    bidang: 'Statistik',
+    pertanyaan: "Modus dari data: 5, 6, 7, 5, 8, 9, 5, 10 adalah...",
+    jawabanBenar: "5",
+    opsiLain: ["6", "7", "10"],
+    pembahasan: "Angka 5 muncul 3 kali, paling sering dibanding angka lainnya."
+  },
+  {
+    id: 'sdk43',
+    bidang: 'Aljabar',
+    pertanyaan: "Jika $2^x = 32$, maka nilai $x$ adalah...",
+    jawabanBenar: "5",
+    opsiLain: ["4", "6", "3"],
+    pembahasan: "$2 \\times 2 \\times 2 \\times 2 \\times 2 = 32$ (ada 5 faktor)."
+  },
+  {
+    id: 'sdk44',
+    bidang: 'Geometri',
+    pertanyaan: "Sebuah taman berbentuk lingkaran berdiameter 14 m. Jarak antar pohon di sekeliling taman adalah 4 m. Banyak pohon adalah...",
+    jawabanBenar: "11",
+    opsiLain: ["44", "10", "12"],
+    pembahasan: "$K = 22/7 \\times 14 = 44$ m. Banyak pohon $= 44 / 4 = 11$ pohon."
+  },
+  {
+    id: 'sdk45',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "FPB dari 36 dan 48 adalah...",
+    jawabanBenar: "12",
+    opsiLain: ["6", "18", "24"],
+    pembahasan: "Faktor 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. Faktor 48: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48. Faktor persekutuan terbesar adalah 12."
+  },
+  {
+    id: 'sdk46',
+    bidang: 'Kombinatorika',
+    pertanyaan: "Dalam satu set kartu bridge (tanpa joker), peluang terambilnya kartu As adalah...",
+    jawabanBenar: "4/52",
+    opsiLain: ["1/52", "1/13", "13/52"],
+    pembahasan: "Ada 4 kartu As dalam total 52 kartu."
+  },
+  {
+    id: 'sdk47',
+    bidang: 'Geometri',
+    pertanyaan: "Luas sebuah belah ketupat adalah 24 cm². Jika panjang salah satu diagonalnya 6 cm, panjang diagonal lainnya adalah... cm",
+    jawabanBenar: "8",
+    opsiLain: ["4", "6", "12"],
+    pembahasan: "$L = (d1 \\times d2) / 2 \\implies 24 = (6 \\times d2) / 2 \\implies 24 = 3 \\times d2 \\implies d2 = 8$."
+  },
+  {
+    id: 'sdk48',
+    bidang: 'Aljabar',
+    pertanyaan: "Hasil dari $(100-1) \\times (100-2) \\times \\dots \\times (100-150)$ adalah...",
+    jawabanBenar: "0",
+    opsiLain: ["100", "5050", "-1000"],
+    pembahasan: "Dalam urutan perkalian tersebut akan ada suku $(100-100)$ yang bernilai 0. Berapapun dikalikan 0 hasilnya adalah 0."
+  },
+  {
+    id: 'sdk49',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "Banyaknya bilangan prima antara 1 sampai 20 adalah...",
+    jawabanBenar: "8",
+    opsiLain: ["7", "9", "10"],
+    pembahasan: "Bilangan primanya: 2, 3, 5, 7, 11, 13, 17, 19."
+  },
+  {
+    id: 'sdk50',
+    bidang: 'Geometri',
+    pertanyaan: "Jumlah seluruh sudut pada sebuah segiempat adalah... derajat",
+    jawabanBenar: "360",
+    opsiLain: ["180", "540", "90"],
+    pembahasan: "Setiap segiempat dapat dibagi menjadi 2 segitiga, sehingga $2 \\times 180 = 360$."
+  },
+  {
+    id: 'sdk51',
+    bidang: 'Logika',
+    pertanyaan: "Jika satu jam sebelum jam 12.00 adalah jam 11.00, maka 100 menit sebelum jam 12.00 adalah jam...",
+    jawabanBenar: "10.20",
+    opsiLain: ["10.40", "11.10", "10.00"],
+    pembahasan: "100 menit $= 1$ jam 40 menit. 12.00 dikurangi 1 jam $= 11.00$. 11.00 dikurangi 40 menit $= 10.20$."
+  },
+  {
+    id: 'sdk52',
+    bidang: 'Teori Bilangan',
+    pertanyaan: "KPK dari 12 dan 15 adalah...",
+    jawabanBenar: "60",
+    opsiLain: ["30", "120", "180"],
+    pembahasan: "$12 = 2^2 \\times 3, 15 = 3 \\times 5$. KPK $= 2^2 \\times 3 \\times 5 = 60$."
+  }
+],
       provinsi: [], nasional: []
     },
     smp: { kabupaten: [], provinsi: [], nasional: [] }

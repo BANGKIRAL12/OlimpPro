@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import puter from "@heyputer/puter.js";
 import { 
   Trophy, HelpCircle, Key, RefreshCcw, CheckCircle2, 
   XCircle, ChevronRight, Target, Award, Home, AlertTriangle,
@@ -221,13 +222,8 @@ export default function App() {
     const prompt = `Jelaskan solusi dari soal olimpiade berikut secara langkah demi langkah: "${question.pertanyaan}". Jawaban benarnya adalah "${question.jawabanBenar}". Berikan tips belajar terkait topik ini.`;
 
     try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-      });
-      const result = await response.json();
-      setAiExplanation(result.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, AI sedang tidak tersedia.");
+      const response = await puter.ai.chat(prompt, { model: "gemini-2.5-flash"})
+      setAiExplanation(response.message || "Maaf, AI sedang tidak tersedia.");
     } catch {
       setAiExplanation("Gagal memuat penjelasan AI. Periksa koneksi internet Anda.");
     } finally {

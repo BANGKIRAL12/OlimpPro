@@ -513,57 +513,37 @@ export default function App() {
 
           <div className="flex-1 overflow-hidden flex flex-col">
             {activeTool === 'calc' && (
-              <div className="w-full max-w-[350px] bg-white rounded-[2.5rem] shadow-2xl shadow-indigo-100 overflow-hidden border border-white items-stretch  overflow-auto">
-                <div className="h-full flex flex-col box-border p-6">
-                  {/* Layar Kalkulator */}
-                  <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-2 px-2 rounded-[2rem] mb-4 text-right shadow-lg">
-                    <div className="text-indigo-200 text-xs font-bold uppercase tracking-widest mb-1">Result</div>
-                      <div className="text-white text-4xl font-light font-mono truncate tracking-tighter">
-                        {calcInput || "0"}
-                      </div>
-                    </div>
-
-                    {/* Grid Tombol */}
-                    <div className="grid grid-cols-4 gap-2 flex-1">
-                      {[
-                        'sin(', 'cos(', 'tan(', 'log(', 
-                        '√(', '^', '(', ')', 
-                        'AC', 'DEL', '/', '*', 
-                        '7', '8', '9', '-', 
-                        '4', '5', '6', '+', 
-                        '1', '2', '3', '=', 
-                        '0', '.'
-                      ].map(b => {
-                        const isOperator = ['/', '*', '-', '+', '=', 'AC', 'DEL'].includes(b);
-                        const isAction = ['AC', 'DEL'].includes(b);
-                        const isEquals = b === '=';
-                        const isFunction = ['sin(', 'cos(', 'tan(', 'log(', '√(', '^'].includes(b);
-
-                        return (
-                          <button
-                            key={b}
-                            onClick={() => handleCalc(b)}
-                            className={`
-                              h-12 rounded-2xl font-bold text-[13px] transition-all duration-200 active:scale-90
-                              ${isEquals 
-                                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200 hover:bg-indigo-700 col-span-1' 
-                                : isAction
-                                ? 'bg-rose-50 text-rose-500 hover:bg-rose-100'
-                                : isFunction
-                                ? 'bg-slate-50 text-indigo-500 hover:bg-indigo-50 border border-slate-100'
-                                : isOperator
-                                ? 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100'
-                                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                              }
-                            `}
-                          >
-                            {b === '√(' ? '√' : b}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
+              <div className="p-6 animate-in fade-in zoom-in-95 duration-200">
+                <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-6 rounded-[2rem] mb-6 text-right shadow-lg sticky top-0 z-10">
+                  <div className="text-indigo-200 text-[10px] font-bold uppercase tracking-widest mb-1">Display</div>
+                  <div className="text-white text-3xl font-mono truncate">{calcInput || "0"}</div>
                 </div>
+                <div className="grid grid-cols-4 gap-2">
+                  {[
+                    'sin(', 'cos(', 'tan(', 'log(', 
+                    '√(', '^', '(', ')', 
+                    'AC', 'DEL', '/', '*', 
+                    '7', '8', '9', '-', 
+                    '4', '5', '6', '+', 
+                    '1', '2', '3', '=', 
+                    '0', '.'
+                  ].map(b => (
+                    <button
+                      key={b}
+                      onClick={() => handleCalc(b)}
+                      className={`h-11 rounded-xl font-bold text-[11px] transition-all active:scale-90 ${
+                        b === '=' ? 'bg-indigo-600 text-white col-span-1 shadow-md' :
+                        ['AC', 'DEL'].includes(b) ? 'bg-rose-50 text-rose-500' :
+                        ['/', '*', '-', '+'].includes(b) ? 'bg-indigo-50 text-indigo-600' : 'bg-slate-100 text-slate-600'
+                      }`}
+                    >
+                      {b === '√(' ? '√' : b}
+                    </button>
+                  ))}
+                </div>
+                {/* Spacing tambahan di bawah agar tidak terpotong radius kontainer */}
+                <div className="h-4" />
+              </div>
             )}
 
             {activeTool === 'board' && (

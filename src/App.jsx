@@ -511,7 +511,7 @@ export default function App() {
              <button onClick={() => setShowTools(false)} className="p-3 text-slate-400 hover:text-rose-500 transition-colors"><X size={20}/></button>
           </div>
 
-          <div className="flex-1 overflow-hidden flex flex-col">
+          <div className="flex-1 overflow-hidden flex flex-col overflow-auto">
             {activeTool === 'calc' && (
               <div className="w-full max-w-[350px] bg-white rounded-[2.5rem] shadow-2xl shadow-indigo-100 overflow-hidden border border-white items-stretch">
                 <div className="h-full flex flex-col box-border p-6">

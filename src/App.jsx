@@ -513,8 +513,8 @@ export default function App() {
 
           <div className="flex-1 overflow-hidden flex flex-col">
             {activeTool === 'calc' && (
-              <div className="h-full flex flex-col">
-                <div className="bg-slate-900 p-6 rounded-2xl mb-4 text-right text-white text-2xl font-mono truncate shadow-inner">{calcInput || "0"}</div>
+              <div className="h-full flex flex-col box-border p-[15px]">
+                <div className="bg-indigo-200 p-6 rounded-2xl mb-4 text-right text-white text-2xl font-mono truncate shadow-inner">{calcInput || "0"}</div>
                 <div className="grid grid-cols-4 gap-2 flex-1">
                   {['sin(','cos(','tan(','log(','√(','^','(',')','AC','DEL','/','*','7','8','9','-','4','5','6','+','1','2','3','=','0','.'].map(b => (
                     <button key={b} onClick={() => handleCalc(b)} className={`rounded-xl font-bold text-xs p-2 ${b === '=' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'}`}>{b}</button>

@@ -569,7 +569,7 @@ export default function App() {
             {activeTool === 'board' && (
               <div className="flex-1 flex flex-col bg-white p-4">
                 <div className="flex-1 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200 relative overflow-hidden">
-                   <canvas ref={canvasRef} width={340} height={400} className="w-full h-full cursor-crosshair touch-none" />
+                   <canvas ref={canvasRef} width={340} height={360} className="w-full h-full cursor-crosshair touch-none" />
                 </div>
                 <div className="mt-4 flex gap-3">
                   <button onClick={() => { const c = canvasRef.current; c.getContext('2d').clearRect(0,0,c.width,c.height); }} className="flex-1 py-4 bg-rose-50 text-rose-500 rounded-2xl font-black text-[10px] uppercase flex items-center justify-center gap-2"><Trash2 size={16}/> Bersihkan</button>

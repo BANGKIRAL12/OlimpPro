@@ -513,8 +513,8 @@ export default function App() {
 
           <div className="flex-1 overflow-hidden flex flex-col">
             {activeTool === 'calc' && (
-              <div className="p-6 animate-in fade-in zoom-in-95 duration-200">
-                <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-6 rounded-[2rem] mb-6 text-right shadow-lg sticky top-0 z-10">
+              <div className="p-6 animate-in fade-in zoom-in-95 duration-200 mb-8">
+                <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-5 rounded-[2rem] mb-4 text-right shadow-lg sticky top-0 z-10">
                   <div className="text-indigo-200 text-[10px] font-bold uppercase tracking-widest mb-1">Display</div>
                   <div className="text-white text-3xl font-mono truncate">{calcInput || "0"}</div>
                 </div>

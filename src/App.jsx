@@ -516,7 +516,7 @@ export default function App() {
               <div className="w-full max-w-[350px] bg-white rounded-[2.5rem] shadow-2xl shadow-indigo-100 overflow-hidden border border-white">
                 <div className="h-full flex flex-col box-border p-6">
                   {/* Layar Kalkulator */}
-                  <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-2 rounded-[2rem] mb-4 text-right shadow-lg">
+                  <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-2 px-2 rounded-[2rem] mb-4 text-right shadow-lg">
                     <div className="text-indigo-200 text-xs font-bold uppercase tracking-widest mb-1">Result</div>
                       <div className="text-white text-4xl font-light font-mono truncate tracking-tighter">
                         {calcInput || "0"}
@@ -524,7 +524,7 @@ export default function App() {
                     </div>
 
                     {/* Grid Tombol */}
-                    <div className="grid grid-cols-4 gap-3 flex-1">
+                    <div className="grid grid-cols-4 gap-2 flex-1">
                       {[
                         'sin(', 'cos(', 'tan(', 'log(', 
                         '√(', '^', '(', ')', 

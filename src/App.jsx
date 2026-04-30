@@ -511,9 +511,9 @@ export default function App() {
              <button onClick={() => setShowTools(false)} className="p-3 text-slate-400 hover:text-rose-500 transition-colors"><X size={20}/></button>
           </div>
 
-          <div className="flex-1 overflow-hidden flex flex-col overflow-auto">
+          <div className="flex-1 overflow-hidden flex flex-col">
             {activeTool === 'calc' && (
-              <div className="w-full max-w-[350px] bg-white rounded-[2.5rem] shadow-2xl shadow-indigo-100 overflow-hidden border border-white items-stretch">
+              <div className="w-full max-w-[350px] bg-white rounded-[2.5rem] shadow-2xl shadow-indigo-100 overflow-hidden border border-white items-stretch  overflow-auto">
                 <div className="h-full flex flex-col box-border p-6">
                   {/* Layar Kalkulator */}
                   <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-2 px-2 rounded-[2rem] mb-4 text-right shadow-lg">

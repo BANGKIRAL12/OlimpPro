@@ -193,19 +193,25 @@ export default function App() {
   const handleCalc = (val) => {
     if (val === "=") {
       try {
-        // Safe evaluation replacing eval() with a sanitized Function constructor approach
-        const sanitizedExpression = calcInput.replace('x', '*').replace(/[^-+/*0-9.]/g, '');
-        // eslint-disable-next-line no-new-func
-        const result = new Function(`return ${sanitizedExpression}`)();
-        setCalcInput(result.toString());
-      } catch {
-        setCalcInput("Error");
-      }
-    } else if (val === "C") {
-      setCalcInput("");
-    } else {
-      setCalcInput(prev => prev + val);
-    }
+        // Sanitize input to only allow mathematical expressions
+        // Using Function constructor (indirect eval) is better for bundlers
+        const indirectEval = (fn) => {
+          return new Function('return ' + fn)();
+        };
+
+        let expr = calcInput.replace(/x/g, '*').replace(/÷/g, '/').replace(/\^/g, '**').replace(/π/g, 'Math.PI');
+        expr = expr.replace(/sin\((.*?)\)/g, 'Math.sin($1*Math.PI/180)')
+                   .replace(/cos\((.*?)\)/g, 'Math.cos($1*Math.PI/180)')
+                   .replace(/tan\((.*?)\)/g, 'Math.tan($1*Math.PI/180)')
+                   .replace(/√\((.*?)\)/g, 'Math.sqrt($1)')
+                   .replace(/log\((.*?)\)/g, 'Math.log10($1)');
+        
+        const res = indirectEval(expr);
+        setCalcInput(Number.isFinite(res) ? res.toString() : "Error");
+      } catch { setCalcInput("Error"); }
+    } else if (val === "AC") setCalcInput("");
+    else if (val === "DEL") setCalcInput(p => p.slice(0, -1));
+    else setCalcInput(p => p + val);
   };
 
   const fetchAiExplanation = async () => {
@@ -507,16 +513,11 @@ export default function App() {
 
           <div className="flex-1 overflow-hidden flex flex-col">
             {activeTool === 'calc' && (
-              <div className="flex-1 p-6 flex flex-col bg-white">
-                <div className="bg-slate-50 p-6 rounded-3xl mb-4 text-right overflow-hidden shadow-inner border border-slate-100">
-                   <div className="text-slate-300 text-xs font-bold mb-1 h-4">Calc v1.0</div>
-                   <div className="text-3xl font-black text-slate-800 tabular-nums break-all">{calcInput || "0"}</div>
-                </div>
-                <div className="grid grid-cols-4 gap-3 flex-1">
-                  {['C','/','*','-','7','8','9','+','4','5','6','=','1','2','3','0','.'].map(btn => (
-                    <button key={btn} onClick={() => handleCalc(btn)} className={`rounded-2xl font-black transition-all active:scale-95 text-sm ${btn === '=' ? 'row-span-2 bg-indigo-600 text-white' : btn === 'C' ? 'bg-rose-50 text-rose-500' : 'bg-slate-50 text-slate-600 hover:bg-slate-100'}`}>
-                      {btn}
-                    </button>
+              <div className="h-full flex flex-col">
+                <div className="bg-slate-900 p-6 rounded-2xl mb-4 text-right text-white text-2xl font-mono truncate shadow-inner">{calcInput || "0"}</div>
+                <div className="grid grid-cols-4 gap-2 flex-1">
+                  {['sin(','cos(','tan(','log(','√(','^','(',')','AC','DEL','/','*','7','8','9','-','4','5','6','+','1','2','3','=','0','.'].map(b => (
+                    <button key={b} onClick={() => handleCalc(b)} className={`rounded-xl font-bold text-xs p-2 ${b === '=' ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600'}`}>{b}</button>
                   ))}
                 </div>
               </div>

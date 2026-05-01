@@ -222,7 +222,7 @@ export default function App() {
     const prompt = `Jelaskan solusi dari soal olimpiade berikut secara langkah demi langkah: "${question.pertanyaan}". Jawaban benarnya adalah "${question.jawabanBenar}". Berikan tips belajar terkait topik ini.`;
 
     try {
-      const response = await puter.ai.chat(prompt, { model: "gemini-2.5-flash"}) 
+      const response = await puter.ai.chat(prompt) 
       setAiExplanation(response.message || "Maaf, AI sedang tidak tersedia.");
     } catch {
       setAiExplanation("Gagal memuat penjelasan AI. Periksa koneksi internet Anda.");
@@ -242,13 +242,9 @@ export default function App() {
     const prompt = `Konteks: User sedang mengerjakan soal olimpiade ${subject}. Pertanyaan: ${question.pertanyaan}. User bertanya: "${userMsg}". Berikan jawaban singkat, jelas, dan edukatif dalam bahasa Indonesia.`;
 
     try {
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-      });
-      const result = await response.json();
-      const aiText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+      const response = await puter.ai.chat(prompt)
+      
+      const aiText = response.message
       setChatMessages(prev => [...prev, { role: 'ai', text: aiText || "Maaf, saya tidak bisa merespon saat ini." }]);
     } catch {
       setChatMessages(prev => [...prev, { role: 'ai', text: "Koneksi terputus." }]);

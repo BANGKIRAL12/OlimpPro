@@ -222,7 +222,7 @@ export default function App() {
     const prompt = `Jelaskan solusi dari soal olimpiade berikut secara langkah demi langkah: "${question.pertanyaan}". Jawaban benarnya adalah "${question.jawabanBenar}". Berikan tips belajar terkait topik ini.`;
 
     try {
-      const response = await puter.ai.chat(prompt, { model: "gemini-2.5-flash"})
+      const response = await puter.ai.chat(prompt, { model: "gemini-2.5-flash"}) 
       setAiExplanation(response.message || "Maaf, AI sedang tidak tersedia.");
     } catch {
       setAiExplanation("Gagal memuat penjelasan AI. Periksa koneksi internet Anda.");

@@ -7,11 +7,12 @@ import {
   Calculator, Pi, FunctionSquare, LayoutGrid, Gem, Crown, Flame, Microscope, 
   Globe2, BookOpen, Clock, Sparkles, Pencil, MessageSquare, X, Eraser, Trash2, Send
 } from 'lucide-react';
+import soal from './database.json'
 
 const apiKey = ""; 
 
 // Database Bidang per Mapel
-const MAPEL_CONFIG = {
+const MAPEL_CONFIG = soal || {
   matematika: ['Campuran', 'Aljabar', 'Geometri', 'Teori Bilangan', 'Kombinatorika'],
   ipa: ['Campuran', 'Biologi', 'Fisika', 'Kimia', 'Astronomi', 'Kebumian'],
   ips: ['Campuran', 'Geografi', 'Ekonomi', 'Sejarah', 'Sosiologi']

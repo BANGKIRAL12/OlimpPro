@@ -7,7 +7,7 @@ import {
   Calculator, Pi, FunctionSquare, LayoutGrid, Gem, Crown, Flame, Microscope, 
   Globe2, BookOpen, Clock, Sparkles, Pencil, MessageSquare, X, Eraser, Trash2, Send
 } from 'lucide-react';
-import data from './database.js
+import data from './database.json
 
 const apiKey = ""; 
 

@@ -7,18 +7,18 @@ import {
   Calculator, Pi, FunctionSquare, LayoutGrid, Gem, Crown, Flame, Microscope, 
   Globe2, BookOpen, Clock, Sparkles, Pencil, MessageSquare, X, Eraser, Trash2, Send
 } from 'lucide-react';
-import data from './database.json'
+import data from './database.js
 
 const apiKey = ""; 
 
 // Database Bidang per Mapel
-const MAPEL_CONFIG = data.soal || {
+const MAPEL_CONFIG = {
   matematika: ['Campuran', 'Aljabar', 'Geometri', 'Teori Bilangan', 'Kombinatorika'],
   ipa: ['Campuran', 'Biologi', 'Fisika', 'Kimia', 'Astronomi', 'Kebumian'],
   ips: ['Campuran', 'Geografi', 'Ekonomi', 'Sejarah', 'Sosiologi']
 };
 
-const SOAL_DATABASE = {
+const SOAL_DATABASE = data.soal || {
   matematika: {
     sd: {
       kabupaten: [
